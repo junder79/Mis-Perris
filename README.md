@@ -11,7 +11,7 @@ V2
 Reset password completado.
 
 Pruebas unitarias:
--#pip install coverage==4.4 
+-#pip install coverage==4.4 \n
 -Agregar 'coverage' en settings.py
 -#coverage run manage.py test perris -v 2
 -#coverage html
