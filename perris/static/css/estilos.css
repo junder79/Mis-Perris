@@ -28,11 +28,13 @@ img
 
 }
  .titulo-general
-}
-}
-{
-	font-family: 'Varela Round', sans-serif;
-}
+
+
+ {
+ 	font-family: 'Pacifico', cursive;
+ }
+	
+
 /* ---------- ADMINISTRADOR -------------*/
 .inicio-adm 
 {
@@ -40,7 +42,7 @@ img
 }
 .titulo-administrador
 {
-	font-family: 'Basic', sans-serif;
+	font-family: 'Pacifico', cursive;
 }
 .boton-postear 
 {
@@ -1093,5 +1095,23 @@ footer p
 	color: white;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	text-align: center;
+}
+
+
+.mensajes
+{
+
+	margin-top: 5px;
+
+}
+.fila-eliminar 
+{
+	margin-top: 5px;
+	align-content: center;
+}
+
+.fila-eliminar-1
+{
 	text-align: center;
 }

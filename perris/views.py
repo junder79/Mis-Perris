@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
+#MENSAJES
+from django.contrib import messages
 #Importamos los modelos de los perros
 from .models import Perros_Rescatados
 #Importamos el Formulario 
@@ -69,6 +71,7 @@ def new_post_perro(request):
            post.author = request.user
            post.published_date = timezone.now()
            post.save()
+           messages.info(request, 'El Post se agregó correctamente!')
            return redirect('adm.inicio')
    else:
        form = Perro_RescatadoForm()
@@ -91,6 +94,7 @@ def edit_post_perro(request, pk):
             post.published_date = timezone.now()
             post.save()
             # return redirect('detail_post_perro', pk=post.pk)
+            messages.info(request, 'El Post se Actualizó')
             return redirect('adm.inicio')
     else:
         form = Perro_RescatadoForm(instance=post)
@@ -101,5 +105,6 @@ def delete_post_perro (request , pk):
     perros=Perros_Rescatados.objects.get(pk=pk)
     if request.method =="POST":
         perros.delete()
+        messages.info(request, 'El Post se Eliminó')
         return redirect ('adm.inicio')
     return render(request, 'perris/adm.perro_post_delete.html', {'perro': perros})

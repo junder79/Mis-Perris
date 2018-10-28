@@ -7,7 +7,7 @@
    <h1 class="card-title animated flipInY">Registrate</h1>
   </div>
   <div class="card-body">
-     <form method="POST" class="needs-validation" novalidate>
+     <form method="POST" class="needs-validation" novalidate >
         {% csrf_token %}
         <!--{{ form.as_p }}-->
        <div class="row" >
@@ -16,7 +16,7 @@
         <div class="input-group-prepend">
                   <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                 </div>
-         <input type="text" class="form-control"  placeholder="Nombre de usuario" name="username" required="required">
+         <input type="text" id="=username" class="form-control"  placeholder="Nombre de usuario" name="username" required="required">
             </div>
          </div>
 
@@ -25,7 +25,7 @@
           <div class="input-group-prepend">
                   <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                 </div>
-           <input type="text" class="form-control" id="validationCustom02" placeholder="Rut"  name="rut" required="required">
+           <input type="text" id="=rut" class="form-control" id="validationCustom02" placeholder="Rut"  name="rut" required="required">
            <div class="valid-feedback" >
              Completado
            </div>
@@ -37,7 +37,7 @@
           <div class="col-12 col-mb-6 col-lg-6">
             <div class="form-group" >
          <label for="email"></label>
-           <input type="text" class="form-control" id="validationCustom03" placeholder="Ingrese Email"  name="email"  required>
+           <input type="email" class="form-control" id="validationCustom03" placeholder="Ingrese Email"  name="email"  required>
            <div class="valid-feedback" >
              Completado
            </div>
@@ -156,7 +156,7 @@
     
 
      <div class="form-group">
-        <input type="submit" value="Registrarse" class="btn-hover color-1" name="Registrarse">
+        <input type="submit" value="Registrarse"   class="btn-hover color-1" name="Registrarse">
         <a  class="btn btn-info text-white" href="{% url 'login' %}">Cancelar</a>
       </div>
  </form>
@@ -184,4 +184,5 @@
   }, false);
 })();
 </script>
+
 {% endblock %}
