@@ -36,7 +36,7 @@ VIVIENDA= (
 
 class RegistroForm(UserCreationForm):
     User.add_to_class('telefono', models.CharField(max_length=12,null=True)),
-    User.add_to_class('rut', models.CharField(max_length=10,null=True)),
+    User.add_to_class('rut', models.CharField(max_length=10,null=False)),
     #User.add_to_class('birthday', forms.DateField(widget = forms.SelectDateWidget)),
     User.add_to_class('region', models.CharField(max_length=50, null=True, default='')),
     User.add_to_class('fecha', models.DateTimeField()),
