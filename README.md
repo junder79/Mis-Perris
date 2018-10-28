@@ -10,7 +10,7 @@ Instalación
 V2
 Reset password completado.
 
-Pruebas unitarias:
+Pruebas unitarias:  
 -#pip install coverage==4.4
 
 -Agregar 'coverage' en settings.py
