@@ -9,3 +9,5 @@ Instalación
 
 V2
 Reset password completado.
+
+-Pruebas unitarias
