@@ -10,4 +10,9 @@ Instalación
 V2
 Reset password completado.
 
--Pruebas unitarias
+Pruebas unitarias:
+-#pip install coverage==4.4 
+-Agregar 'coverage' en settings.py
+-#coverage run manage.py test perris -v 2
+-#coverage html
+-Ir a la carpeta htmlcov y dentro clickear en el archivo index.html para ver los resultados de las pruebas.
