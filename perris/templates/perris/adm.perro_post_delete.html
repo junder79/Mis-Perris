@@ -1,0 +1,12 @@
+{% extends 'perris/base.html' %}
+
+{% block content %}
+ <div class="container" >
+ 	 <form method="POST" >
+      {% csrf_token %}
+      <h3>¿Desea Eliminar el Siguiente POST? {{perro.nombre_perro}}</h3>
+      <button class="btn btn-danger" type="submit">Si</button>
+      <a class="btn btn-primary"  href="{% url 'adm.inicio'%}">Cancelar</a>
+  </form>
+ </div>
+{% endblock %}
