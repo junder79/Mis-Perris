@@ -10,7 +10,7 @@ Requisitos:
 V2  
 Reset password completado.
 
-### Crear reporte de pruebas unitarias:  
+### Crear reporte de Pruebas unitarias:  
 -#pip install coverage==4.4  
 -Agregar 'coverage' en settings.py  
 -#coverage run manage.py test perris -v 2  
