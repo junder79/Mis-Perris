@@ -49,6 +49,6 @@ Datos: - Fotografía: spike.jpg
        - Raza: Boxer  
        - Descripción: Es muy tranquilo dentro de casa, le gusta jugar con su hueso favorito.  
        - Estado: Disponible  
-Resultado esperado: Añadir perro a la base de datos y se muestre perfectamente en la página. 
+Resultado esperado: Añadir perro a la base de datos y se muestre perfectamente en la página.  
 Resultado obtenido: Todos los atributos fueron registrados satisfatoriamente en la base de datos y se muestra perfectamente en la página web.  
 Resultado de la prueba: Exitoso.   
