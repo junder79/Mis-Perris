@@ -18,7 +18,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 #Devolver a la pagina de inicio
 def inicio(request):
 	# Se van agregar los post a la platilla.html
-    perros = Perros_Rescatados.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    perros = Perros_Rescatados.objects.filter()
     return render(request, 'perris/inicio.html',  {'perros': perros})
        
 
@@ -29,8 +29,7 @@ def inicio(request):
 def redirigir(request):
 
     user = request.user
-    perros = Perros_Rescatados.objects.filter(
-        published_date__lte=timezone.now()).order_by('published_date')
+    perros = Perros_Rescatados.objects.filter()
     if user.has_perm('perris.admin'):
         return render(request, 'perris/adm.inicio.html', {'perros': perros}) 
     else:
@@ -51,7 +50,7 @@ def perros_disponibles(request):
 
 
 def administrador_inicio(request):
-    perros = Perros_Rescatados.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    perros = Perros_Rescatados.objects.filter()
     return render(request, 'perris/adm.inicio.html', {'perros': perros})
 
 

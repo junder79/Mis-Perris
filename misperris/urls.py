@@ -21,13 +21,14 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^auth/', include('social_django.urls', namespace='social')),
     url(r'', include('perris.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
              template_name='registration/password_reset.html'
          ),
-         name='password_reset'), 
+         name='password_reset'),
     path('password-reset/done',
          auth_views.PasswordResetDoneView.as_view(
              template_name='registration/password_reset_don.html'
@@ -42,9 +43,10 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(
              template_name='registration/password_reset_completo.html'
          ),
-         name='password_reset_complete'),  
+         name='password_reset_complete'),
     #Importamos las URL de el directorio USUARIO
-    path('usuario/', include('usuario.urls')),  
-]   
+    path('usuario/', include('usuario.urls')),
+
+]
 
 urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

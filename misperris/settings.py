@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -25,7 +26,7 @@ SECRET_KEY = 's6(8+0vi@h96dfiu_4#@1)y!qmqbsmxzr=(ynwd8#h)gkzi42%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['misperrisdw.pythonanywhere.com']
 
 
 # Application definition
@@ -40,7 +41,26 @@ INSTALLED_APPS = [
     'perris',
     'usuario',
     'coverage',
+    'social_django',
+    'rest_framework',
 ]
+
+
+#PAGINACIÓN
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
+
+
+AUTHENTICATION_BACKENDS=(
+ 'social_core.backends.open_id.OpenIdAuth',
+ 'social_core.backends.google.GoogleOpenId',
+ 'social_core.backends.google.GoogleOAuth2',
+ 'django.contrib.auth.backends.ModelBackend',
+
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,6 +86,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -84,7 +107,13 @@ DATABASES = {
     }
 }
 
+# Autenticacion con Google
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='520008607250-7f486hokst67p49bnfan330p2amhnq4r.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET='YIuzftoOJW8M0CmWV_OaHdQm'
+
+SOCIAL_AUTH__KEY='520008607250-7f486hokst67p49bnfan330p2amhnq4r.apps.googleusercontent.com'
+SOCIAL_AUTH__SECRET='YIuzftoOJW8M0CmWV_OaHdQm'
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -124,7 +153,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-#para que acepte Django subir archivos 
+#para que acepte Django subir archivos
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -143,5 +172,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'samuel.varas.adoptante@gmail.com'
 EMAIL_HOST_PASSWORD = 'samuelvaras111'
-
 
