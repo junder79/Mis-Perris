@@ -1,5 +1,8 @@
-#MisPerris 3 Ultimate Edition:  
-https://misperrisdw.pythonanywhere.com
+###MisPerris 3 Ultimate Edition:  
+https://misperrisdw.pythonanywhere.com  
+
+#ATENCIÓN  
+El login no funcionará con LOCALHOST, porque la API de Google nos da la opcion de añadir una URL (En este caso se está usando bajo la web https://misperrisdw.pythonanywhere.com), para confirgurarlo, solo agrega la API con tu cuenta y cambia los SECRET_KEYS.
 
 # Mis-Perris
 Requisitos:  
